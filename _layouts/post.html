@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+
+<html>
+
+{% include head.html %}
+
+<body>
+
+    {% include header.html %}
+
+    <!-- Main -->
+    <article id="main">
+        <header{% if page.image %} style="background-image: url('{% if site.featured-image-source %}{{ page.image | prepend: site.featured-image-source | absolute_url }}{% else %}{{ "" | absolute_url }}/assets/images/{{ page.image }}{% endif %}');"{% endif %}>
+            <h2>{{ page.title }}</h2>
+            <p>{{ page.description }}</p>
+        </header>
+        <section class="wrapper style5">
+            <div class="inner">
+                {% if page.video %}
+                        {% assign video_embed = page.video | remove:'https://youtu.be/' %}
+                        <iframe width="940" height="529" src="//www.youtube.com/embed/{{ video_embed }}?theme=light&amp;color=white" frameborder="0" allowfullscreen> </iframe>
+                {% endif %}
+                
+                {{ content }}
+
+                    {% assign tagsize = page.tags.size %}
+                    {% if tagsize != 0 %}
+                        <div class="entry-tags text-center">
+                            <i class="fa fa-tags"></i>&nbsp;
+                                Tagged with 
+                            {% for tag in page.tags %}
+                                <a href="{{ site.url }}/tags.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>
+
+                                {% unless forloop.last %}
+                                &nbsp;&bull;&nbsp;
+                                {% endunless %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {% if site.share %}
+                        {% include share.html %}
+                    {% endif %}
+
+                        {% include signoff.html %} 
+                        
+                    {% if site.disqus_shortname and page.comments == true %}
+                        <div id="disqus_thread"></div><!-- /#disqus_thread -->
+                    {% endif %}
+
+            </div>
+        </section>
+
+    </article>
+
+    {% include footer.html %}
+
+</body>
+
+</html>

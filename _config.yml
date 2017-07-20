@@ -1,0 +1,76 @@
+# Site settings
+title: Great-Q Seed
+company: PB. Great Quality Seed
+slogan: Produsen dan penyedia benih berkualitas Inpago Unsoed 1
+logo: logo.png
+email: hello@greatquality.id
+description: Produsen dan penyedia benih berkualitas, inpago unsoed 1, benih unggul, benih padi, produksi tinggi, padi aromatik.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://greatquality.id" # the base hostname & protocol for your site
+
+# Homepage tiles
+tiles-source: posts # accepts "posts" or "pages"
+tiles-count: 3
+
+# Misc settings
+featured-image-source:
+disqus_shortname: greatqseed
+search: true
+share: true
+order: true
+
+# Gems used
+gems:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Archives configuration
+# https://github.com/jekyll/jekyll-archives/blob/master/docs/configuration.md
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: 'archive'
+  permalinks:
+    # year: '/:year/'
+    # month: '/:year/:month/'
+    # day: '/:year/:month/:day/'
+    tag: '/archive/tag/:name/'
+    category: '/archive/category/:name/'
+
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/atom.xml"
+        - "/feed.xml"
+        - "/feed/index.xml"
+    include_posts:
+        - "/index.html"
+
+
+# Social settings
+500px_url:
+facebook_url: https://facebook.com/greatqseed
+github_url:
+gitlab_url: 
+googleplus_url: 
+instagram_url: https://instagram.com/greatqseed
+linkedin_url: 
+pinterest_url:
+slack_url:
+twitter_url: https://twitter.com/greatqseed
+
+# Build settings
+markdown: kramdown
+
+
+# Analytics and webmaster tools stuff goes here
+google_analytics: UA-99929854-1
+google_verify: YmlyiAKjdKXPMdwYMQJ6140tBMLW6-5tidL5-tMeqek
+  
+# author
+author:
+  name: Munawar
+  picture: mun.jpg
+  email: munawar@greatquality.id
+  description: Master Ilmu Tanaman, menggeluti bidang pemuliaan tanaman padi sejak menjadi mahasiswa di program studi Pemuliaan Tanaman Fakultas Pertanian Universitas Jenderal Sudirman Purwokerto. 
